@@ -1,0 +1,39 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+    <servlet>
+        <servlet-name>addcontact</servlet-name>
+        <servlet-class>com.qwe3.jdoexample.servlet.AddContact</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>delcontact</servlet-name>
+        <servlet-class>com.qwe3.jdoexample.servlet.DeleteContact</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>updatecontact</servlet-name>
+        <servlet-class>com.qwe3.jdoexample.servlet.UpdateContact</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>listcontacts</servlet-name>
+        <servlet-class>com.qwe3.jdoexample.servlet.ListContacts</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>updatecontact</servlet-name>
+        <url-pattern>/updatecontact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delcontact</servlet-name>
+        <url-pattern>/delcontact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addcontact</servlet-name>
+        <url-pattern>/addcontact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>listcontacts</servlet-name>
+        <url-pattern>/listcontacts</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

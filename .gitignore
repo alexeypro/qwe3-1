@@ -1,0 +1,5 @@
+tmpClasses/
+war/WEB-INF/lib/
+war/WEB-INF/appengine-generated/
+war/WEB-INF/classes/com/
+nbproject/
