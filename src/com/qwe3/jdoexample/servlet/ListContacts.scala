@@ -13,12 +13,14 @@ class ListContacts extends HttpServlet {
     override def doGet(request: HttpServletRequest, response: HttpServletResponse) {
         val pm = PMF.get().getPersistenceManager
         val q = pm.newQuery("select from " + classOf[Contact].getName)
-        q.setOrdering("id DESC")
+        //q.setOrdering("id DESC")
         val res = q.execute().asInstanceOf[java.util.List[Contact]]
         //val contacts = Conversions.convertList(res).toList
         // we do not convert as jsp works with java's List
         // and we recreceate as new obj otherwise it will bring up attached obj issues
-        request.setAttribute("contacts", new java.util.ArrayList[Contact](res))
+        var ret = new java.util.ArrayList[Contact]()
+        if (res != null) ret = new java.util.ArrayList[Contact](res)
+        request.setAttribute("contacts", ret)
         pm.close()
         getServletContext().getRequestDispatcher("/WEB-INF/jsp/listcontacts.jsp").forward(request, response)
     }

@@ -3,9 +3,9 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%
-List<Contact> contacts = new ArrayList<Contact>(1); 
+List<Contact> contacts = new ArrayList<Contact>(); 
 if (request.getAttribute("contacts") != null) 
-    contacts = (ArrayList<Contact>) request.getAttribute("contacts");
+    contacts = (List<Contact>) request.getAttribute("contacts");
 %>
 <html>
     <body>
